@@ -1,8 +1,7 @@
 #!sh
 #1
-
-cd lab1
-
+mkdir lab0 && cd lab0
+touch fluyyyy
 touch bayleef4
 
 mkdir -p duosion0/{chansey,hoppip}
@@ -26,8 +25,6 @@ echo -e "Тип диеты \nHerbivore" 1> timburr9/hippopotas
 echo "Способности  Swarm Mach Speed Compoundeyes Shiled" 1> timburr9/beautifly
 echo "Тип диеты  Omnivore" 1> umbreon0
 
-ls -LR
-
 echo "--------------------------------"
 
 #2
@@ -49,12 +46,38 @@ chmod u=,g=,o=r-- timburr9/hippopotas
 chmod 640 timburr9/beautifly
 chmod u=,g=,o=r-- umbreon0
 
-ls -LR
+
+echo "--------------------------------"
+chmod u=rwx,g=rw-,o=rw- ../lab0/*
+chmod u=rwx,g=rw-,o=rw-  ../lab0/**/*
+
+#3
+cat duosion0/stoutland duosion0/stoutland > gurdurr8_60
+ln bayleef4 timburr9/hippopotasbayleef
+cp gurdurr8 duosion0/stoutlandgurdurr
+ln -s ../lab0/duosion0 Copy_46
+ln -s gurdurr8 timburr9/beautiflygurdurr
+cp gurdurr8 numel4/wailmer
+cp -RP ./timburr9/* ./numel4/hariyama/
 
 echo "--------------------------------"
 
-#3
+#4
+mkdir tmp
 
+wc -l < gurdurr8 >> gurdurr8
+ls -Rlt 2>tmp/error.log | tail -2
+cat bayleef4 2>&1 | grep -i "e$" 
+cat -n bayleef4 2>&1 | sort 
+cat -n ./*0 ./*/*0 2>&1 | sort -r
+ls -Rl 2>&1 | grep "y$" | tail -2 | sort -rk3
+echo "--------------------------------"
+#5
+rm -f gurdurr8
+rm -f timburr9/hippopotas
+rm -f timburr9/beautiflygurdu*
+rm -f timburr9/hippopotasbayle*
+rm -rf duosion0
+rm -rf numel4/golbat
 
-
-
+echo "Done!"
