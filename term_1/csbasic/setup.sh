@@ -1,7 +1,6 @@
 #!sh
 #1
-mkdir lab && cd lab
-touch fluyyyy
+mkdir lab0 && cd lab0
 touch bayleef4
 
 mkdir -p duosion0/{chansey,hoppip}
@@ -17,15 +16,17 @@ touch timburr9/{hippopotas,beautifly}
 
 touch umbreon0
 
-echo "Тип покемона  GRASS NONE" 1> bayleef4
-echo "Тип покемона  NORMAL NONE" 1> duosion0/stoutland
-echo -e "Способности  Focus Energy Bide Low Kick Rock Throw \nWake-Up Slap Chip Away Bulk Up Rock Slide Dynamicpunch Scary Face \nHammer Arm Stone Edge Focus Punch Superpower" 1> gurdurr8
-echo -e "Способности  Pure \nBlooded Rivalry Mold Breaker" 1> numel4/axew
-echo -e "Тип диеты \nHerbivore" 1> timburr9/hippopotas
-echo "Способности  Swarm Mach Speed Compoundeyes Shiled" 1> timburr9/beautifly
-echo "Тип диеты  Omnivore" 1> umbreon0
+echo "Тип покемона  GRASS NONE" > bayleef4
+echo "Тип покемона  NORMAL NONE" > duosion0/stoutland
+echo -e "Способности  Focus Energy Bide Low Kick Rock Throw \nWake-Up Slap Chip Away Bulk Up Rock Slide Dynamicpunch Scary Face \nHammer Arm Stone Edge Focus Punch Superpower" > gurdurr8
+echo -e "Способности  Pure \nBlooded Rivalry Mold Breaker" > numel4/axew
+echo -e "Тип диеты \nHerbivore" > timburr9/hippopotas
+echo "Способности  Swarm Mach Speed Compoundeyes Shiled" > timburr9/beautifly
+echo "Тип диеты  Omnivore" > umbreon0
 
-echo "--------------------------------"
+
+echo "1 done!"
+
 
 #2
 chmod 666 bayleef4
@@ -46,21 +47,24 @@ chmod u=,g=,o=r-- timburr9/hippopotas
 chmod 640 timburr9/beautifly
 chmod u=,g=,o=r-- umbreon0
 
+echo "2 done!"
 
-echo "--------------------------------"
-chmod u=rwx,g=rw-,o=rw- ../lab/*
-chmod u=rwx,g=rw-,o=rw-  ../lab/**/*
 
 #3
+chmod u=rwx,g=rw-,o=rw- ../lab0/*
+chmod u=rwx,g=rw-,o=rw-  ../lab0/**/*
+
 cat duosion0/stoutland duosion0/stoutland > gurdurr8_60
 ln bayleef4 timburr9/hippopotasbayleef
 cp gurdurr8 duosion0/stoutlandgurdurr
-ln -s ../lab/duosion0 Copy_46
+ln -s ../lab0/duosion0 Copy_46
 ln -s gurdurr8 timburr9/beautiflygurdurr
 cp gurdurr8 numel4/wailmer
 cp -RP ./timburr9/* ./numel4/hariyama/
 
-echo "--------------------------------"
+ls -lR
+echo "3 done!"
+
 
 #4
 mkdir tmp
@@ -71,7 +75,9 @@ cat bayleef4 2>&1 | grep -i "e$"
 cat -n bayleef4 2>&1 | sort 
 cat -n ./*0 ./*/*0 2>&1 | sort -r
 ls -Rl 2>&1 | grep "y$" | tail -2 | sort -rk3
-echo "--------------------------------"
+
+echo "4 done!"
+
 #5
 rm -f gurdurr8
 rm -f timburr9/hippopotas
@@ -79,5 +85,4 @@ rm -f timburr9/beautiflygurdu*
 rm -f timburr9/hippopotasbayle*
 rm -rf duosion0
 rm -rf numel4/golbat
-
-echo "Done!"
+echo "5 Done!"
