@@ -1,18 +1,28 @@
-#!sh
+#!/bin/bash
 #1
 mkdir lab0 && cd lab0
+
 touch bayleef4
 
-mkdir -p duosion0/{chansey,hoppip}
+mkdir duosion0
+mkdir duosion0/chansey
+mkdir duosion0/hoppip
+
 touch duosion0/stoutland
 
 touch gurdurr8
 
-mkdir -p numel4/{hariyama,golbat,vulpix,wailmer}
+mkdir numel4
+mkdir numel4/hariyama
+mkdir numel4/golbat
+mkdir numel4/vulpix
+mkdir numel4/wailmer
 touch numel4/axew
 
-mkdir -p timburr9/flaaffy
-touch timburr9/{hippopotas,beautifly}
+mkdir timburr9
+mkdir timburr9/flaaffy
+touch timburr9/hippopotas
+touch timburr9/beautifly
 
 touch umbreon0
 
@@ -24,23 +34,26 @@ echo -e "Тип диеты \nHerbivore" > timburr9/hippopotas
 echo "Способности  Swarm Mach Speed Compoundeyes Shiled" > timburr9/beautifly
 echo "Тип диеты  Omnivore" > umbreon0
 
-
 echo "1 done!"
 
 
 #2
 chmod 666 bayleef4
-chmod u=rwx,g=r-x,o=-w- duosion0
+
 chmod u=,g=r--,o=r-- duosion0/stoutland
 chmod u=r-x,g=rwx,o=-wx duosion0/chansey
 chmod 355 duosion0/hoppip
+chmod u=rwx,g=r-x,o=-w- duosion0
+
 chmod 600 gurdurr8
-chmod 770 numel4
+
 chmod u=r-x,g=rwx,o=r-x numel4/hariyama
 chmod u=-wx,g=rwx,o=-wx numel4/golbat
 chmod u=r-x,g=-wx,o=rwx numel4/vulpix
 chmod u=-wx,g=-wx,o=-wx numel4/wailmer
 chmod 066 numel4/axew
+chmod 770 numel4
+
 chmod u=rwx,g=rwx,o=rwx timburr9
 chmod 355 timburr9/flaaffy
 chmod u=,g=,o=r-- timburr9/hippopotas
@@ -51,30 +64,54 @@ echo "2 done!"
 
 
 #3
-chmod u=rwx,g=rw-,o=rw- ../lab0/*
-chmod u=rwx,g=rw-,o=rw-  ../lab0/**/*
+
+chmod 774 duosion0/stoutland
+chmod 774 bayleef4
+chmod 774 duosion0
+chmod 774 gurdurr8
+chmod -R 774 timburr9
+chmod 774 numel4/hariyama
+chmod 774 numel4/wailmer
 
 cat duosion0/stoutland duosion0/stoutland > gurdurr8_60
 ln bayleef4 timburr9/hippopotasbayleef
 cp gurdurr8 duosion0/stoutlandgurdurr
-ln -s ../lab0/duosion0 Copy_46
+ln -s duosion0 Copy_46
 ln -s gurdurr8 timburr9/beautiflygurdurr
 cp gurdurr8 numel4/wailmer
 cp -RP ./timburr9/* ./numel4/hariyama/
 
+chmod 044 duosion0/stoutland
+chmod 666 bayleef4
+chmod 753 duosion0
+chmod 600 gurdurr8
+chmod 777 timburr9
+chmod 355 timburr9/flaaffy
+chmod 004 timburr9/hippopotas
+chmod 640 timburr9/beautifly
+chmod 575 numel4/hariyama
+chmod 333 numel4/wailmer
+
 ls -lR
+
 echo "3 done!"
 
+chmod -R 774 ../lab0
 
 #4
 mkdir tmp
-
 wc -l < gurdurr8 >> gurdurr8
+echo "---"
 ls -Rlt 2>tmp/error.log | tail -2
+echo "---"
 cat bayleef4 2>&1 | grep -i "e$" 
+echo "---"
 cat -n bayleef4 2>&1 | sort 
+echo "---"
 cat -n ./*0 ./*/*0 2>&1 | sort -r
+echo "---"
 ls -Rl 2>&1 | grep "y$" | tail -2 | sort -rk3
+echo "---"
 
 echo "4 done!"
 
@@ -85,4 +122,6 @@ rm -f timburr9/beautiflygurdu*
 rm -f timburr9/hippopotasbayle*
 rm -rf duosion0
 rm -rf numel4/golbat
-echo "5 Done!"
+
+echo "5 Done"
+
