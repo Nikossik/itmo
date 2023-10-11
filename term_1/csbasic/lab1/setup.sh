@@ -64,10 +64,12 @@ chmod 004 umbreon0
 
 echo "2 done!"
 
-
+#3
 echo "TASK 3"
 
 chmod u+r ./duosion0/stoutland
+chmod -R u+rw ./numel4
+chmod -R u+r ./timburr9
 
 cat duosion0/stoutland duosion0/stoutland > gurdurr8_60
 ln bayleef4 timburr9/hippopotasbayleef
@@ -75,10 +77,43 @@ cp gurdurr8 duosion0/stoutlandgurdurr
 ln -s duosion0 Copy_46
 ln -s ../gurdurr8 timburr9/beautiflygurdurr
 cp gurdurr8 numel4/wailmer
-cp -RP ./timburr9/* ./numel4/hariyama/
+cp -r ./timburr9/* ./numel4/hariyama/
+
+chmod u-r ./duosion0/stoutland
+chmod u-rw ./numel4
+chmod u-r ./timburr9
+
+echo "3 done!"
+
+#4
+echo "Task 4"
 
 
-#echo "3 done!"
+wc -l gurdurr8 >> gurdurr8
+ls -ltR 2> /tmp/error_log| tail -n 2
+echo "-----" 
+grep -i "e$" bayleef4
+echo "-----"
+cat -n bayleef4 | sort
+echo "-----"
+grep -r --include '*0' -n '' ../lab0 | sort -r
+echo "-----"
+ls -lR | grep "y$" | sort -nk2 | tail -n 2
+echo "-----"
 
+echo "4 done!"
 
+#5
+echo "Task 5"
 
+chmod -R u+rx duosion0
+chmod -R u+rxw numel4
+
+rm -f gurdurr8
+rm -f timburr9/hippopotas
+rm -f timburr9/beautiflygurdu*
+rm -f timburr9/hippopotasbayle*
+rm -rf duosion0
+rm -rf numel4/golbat/
+
+echo "5 Done"
