@@ -41,26 +41,23 @@ echo "1 done!"
 #2
 echo "TASK 2"
 chmod 666 bayleef4
-
-chmod u=,g=r,o=r duosion0/stoutland
-chmod u=rx,g=rwx,o=wx duosion0/chansey
+chmod 755 duosion0
+chmod 044 duosion0/stoutland
+chmod 751 duosion0/chansey
 chmod 355 duosion0/hoppip
-chmod u=rwx,g=rx,o=w duosion0
-
 chmod 600 gurdurr8
-
-chmod u=rx,g=rwx,o=rx numel4/hariyama
-chmod u=wx,g=rwx,o=wx numel4/golbat
-chmod u=rx,g=wx,o=rwx numel4/vulpix
-chmod u=wx,g=wx,o=wx numel4/wailmer
-chmod 066 numel4/axew
 chmod 770 numel4
-
-chmod u=rwx,g=rwx,o=rwx timburr9
+chmod 770 numel4/hariyama
+chmod 773 numel4/golbat
+chmod 731 numel4/vulpix
+chmod 333 numel4/wailmer
+chmod 066 numel4/axew
+chmod 777 timburr9
 chmod 355 timburr9/flaaffy
 chmod 004 timburr9/hippopotas
 chmod 640 timburr9/beautifly
 chmod 004 umbreon0
+
 
 echo "2 done!"
 
