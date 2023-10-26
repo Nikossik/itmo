@@ -7,9 +7,11 @@ public class TakeDown extends PhysicalMove {
     }
 
     @Override
-    protected void applyOppDamage(Pokemon opponent, double damage) {
+    protected void applyOppDamage(Pokemon opponent, Pokemon pokemon, double damage) {
         opponent.setMod(Stat.HP, (int) damage);
+        pokemon.setMod(Stat.HP, (int) Math.round(damage / 4));
     }
+
     @Override
     protected String describe() {
         return "использует Take Down";

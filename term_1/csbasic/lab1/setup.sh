@@ -5,23 +5,22 @@ mkdir lab0 && cd lab0
 
 touch bayleef4
 
-mkdir duosion0
-mkdir duosion0/chansey
+mkdir -p duosion0/chansey
 mkdir duosion0/hoppip
 
 touch duosion0/stoutland
 
 touch gurdurr8
 
-mkdir numel4
-mkdir numel4/hariyama
+#mkdir numel4
+mkdir -p numel4/hariyama
 mkdir numel4/golbat
 mkdir numel4/vulpix
 mkdir numel4/wailmer
+
 touch numel4/axew
 
-mkdir timburr9
-mkdir timburr9/flaaffy
+mkdir -p timburr9/flaaffy
 touch timburr9/hippopotas
 touch timburr9/beautifly
 
@@ -85,18 +84,19 @@ echo "3 done!"
 #4
 echo "Task 4"
 
-
+echo "1------"
 wc -l gurdurr8 >> gurdurr8
-ls -ltR 2> /tmp/error_log| tail -n 2
-echo "-----" 
+cat gurdurr8
+echo "2------"
+ls -lR 2>/tmp/error_log | grep ^- | sort -k6 | tail -2
+echo "3-----" 
 grep -i "e$" bayleef4
-echo "-----"
-cat -n bayleef4 | sort
-echo "-----"
-grep -r --include '*0' -n '' ../lab0 | sort -r
-echo "-----"
-ls -lR | grep "y$" | sort -nk2 | tail -n 2
-echo "-----"
+echo "4-----"
+cat -n bayleef4 | sort -n
+echo "5-----"
+cat -n *0 | sort -r
+echo "6-----"
+ls -lR | sort -nk2 | grep "^-.*y$" | tail -2
 
 echo "4 done!"
 
@@ -114,3 +114,4 @@ rm -rf duosion0
 rm -rf numel4/golbat/
 
 echo "5 Done"
+

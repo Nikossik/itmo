@@ -11,6 +11,9 @@ public class Facade extends PhysicalMove {
         Status status = opponent.getCondition();
         if (status.equals(Status.BURN) || status.equals(Status.PARALYZE) || status.equals(Status.POISON)) {
             opponent.setMod(Stat.HP, (int) Math.round(damage) * 2);
+        } else {
+            opponent.setMod(Stat.HP, (int) Math.round(damage));
+
         }
     }
 
