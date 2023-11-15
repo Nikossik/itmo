@@ -106,12 +106,12 @@ echo "Task 5"
 chmod -R u+rx duosion0
 chmod -R u+rxw numel4
 
-rm -f gurdurr8
-rm -f timburr9/hippopotas
-rm -f timburr9/beautiflygurdu*
-rm -f timburr9/hippopotasbayle*
-rm -rf duosion0
-rm -rf numel4/golbat/
+# rm -f gurdurr8
+# rm -f timburr9/hippopotas
+# rm -f timburr9/beautiflygurdu*
+# rm -f timburr9/hippopotasbayle*
+# rm -rf duosion0
+# rm -rf numel4/golbat/
 
 echo "5 Done"
 
