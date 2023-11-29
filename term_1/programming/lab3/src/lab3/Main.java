@@ -1,13 +1,20 @@
 package lab3;
 
+import lab3.creatures.Explorer;
+import lab3.creatures.Flashlight;
+import lab3.creatures.Monster;
+import lab3.creatures.State;
+import lab3.locations.*;
+
 public class Main {
     public static void main(String[] args) {
         //фонарь
-        Flashlight flashlight = new Flashlight();
+        Flashlight flashlight1 = new Flashlight();
+        Flashlight flashlight2 = new Flashlight();
 
         // Создание персонажей
-        Explorer explorer1 = new Explorer("Денфорт", State.EXPLORING , flashlight);
-        Explorer explorer2 = new Explorer("Исследователь", State.EXPLORING, flashlight);
+        Explorer explorer1 = new Explorer("Денфорт", State.EXPLORING , flashlight1);
+        Explorer explorer2 = new Explorer("Исследователь", State.EXPLORING, flashlight2);
         Monster monster = new Monster("Неизвестное создание", State.CALM);
 
         // Создание объектов окружения
@@ -20,10 +27,14 @@ public class Main {
         Location location = new Location(footprints, rift, pipeSound, gasolineSmell, true, true);
 
         //действия
+
         monster.sneak();
 
         explorer1.feel(State.IN_DANGER);
         explorer2.feel(State.IN_DANGER);
+
+        explorer1.turnOn();
+        explorer2.turnOn();
 
         explorer1.move();
         explorer2.move();
@@ -53,13 +64,15 @@ public class Main {
         explorer1.feel(State.UNCOMFORTABLE);
         explorer2.feel(State.UNCOMFORTABLE);
 
-
+        location.checkForObstacle();
         explorer2.discover("тупик впереди");
-
-        rift.describe("глубокая");
+        location.checkForRift("глубокая");
 
         explorer1.feel(State.SCARED);
         explorer2.feel(State.SCARED);
+
+
+
     }
 }
 
