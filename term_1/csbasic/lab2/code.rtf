@@ -1,0 +1,35 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99985\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 ORG  0x143\
+X:  WORD  0xE14C\
+START:\
+ LD $Z\
+ SUB $V\
+ ST $X\
+ CLA\
+ OR $Y\
+ AND $X\
+ ST $R\
+ HLT\
+R: WORD 0xE14C\
+Y: WORD 0x2143\
+Z: WORD 0x2143\
+V: WORD 0x314D\
+\
+\
+ORG  0x144\
+START:\
+ LD $Z\
+ SUB $V\
+ AND $Y\
+ ST $R\
+ HLT\
+R: WORD 0xE14C\
+Y: WORD 0x2143\
+Z: WORD 0x2143\
+V: WORD 0x314D}

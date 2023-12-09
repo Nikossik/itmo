@@ -4,10 +4,11 @@ import lab3.creatures.Explorer;
 import lab3.creatures.Flashlight;
 import lab3.creatures.Monster;
 import lab3.creatures.State;
+import lab3.exceptions.CustomCheckedException;
 import lab3.locations.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CustomCheckedException {
         //фонарь
         Flashlight flashlight1 = new Flashlight();
         Flashlight flashlight2 = new Flashlight();
@@ -25,13 +26,28 @@ public class Main {
 
         // Создание локации
         Location location = new Location(footprints, rift, pipeSound, gasolineSmell, true, true);
+        Explorer.ExplorationJournal journal = explorer1.new ExplorationJournal();
+
+        // инструменты
+        Explorer.ExplorationToolkit.prepareKit();
+
+        try {
+            Explorer.ExplorationToolkit.addTool("Фонарик");
+            Explorer.ExplorationToolkit.addTool("Журнал");
+        } catch (CustomCheckedException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
 
         //действия
-
+        System.out.println("-------------------------------------------");
         monster.sneak();
 
         explorer1.feel(State.IN_DANGER);
         explorer2.feel(State.IN_DANGER);
+
+        System.out.println("-------------------------------------------");
+        explorer1.markCheckpoint("Поход начинается");
+        System.out.println("-------------------------------------------");
 
         explorer1.turnOn();
         explorer2.turnOn();
@@ -42,6 +58,13 @@ public class Main {
         explorer1.feel(State.EXPLORING);
         explorer2.feel(State.EXPLORING);
 
+        System.out.println("-------------------------------------------");
+
+        journal.addEntry("Начинаем исследование территории.");
+        explorer1.exploreArea();
+
+        System.out.println("-------------------------------------------");
+
 
         explorer1.remind("о следах");
         location.checkForFootprints("подозрительные");
@@ -50,6 +73,8 @@ public class Main {
 
         explorer1.react("звуки");
         explorer2.react("лагерь");
+
+        System.out.println("-------------------------------------------");
 
         explorer1.turnOff();
         explorer2.turnOff();
@@ -68,11 +93,15 @@ public class Main {
         explorer2.discover("тупик впереди");
         location.checkForRift("глубокая");
 
+        System.out.println("-------------------------------------------");
+
         explorer1.feel(State.SCARED);
         explorer2.feel(State.SCARED);
+        journal.addEntry("Заканчиваем исследования");
 
-
-
+        System.out.println("-------------------------------------------");
+        journal.printJournal();
+        explorer1.markCheckpoint("Поход закончился");
     }
 }
 

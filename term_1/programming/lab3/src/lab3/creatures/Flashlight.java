@@ -1,5 +1,8 @@
 package lab3.creatures;
 
+import lab3.exceptions.CustomCheckedException;
+import lab3.exceptions.CustomUncheckedException;
+
 import lab3.locations.LightSource;
 import lab3.locations.LightState;
 
@@ -9,12 +12,18 @@ public class Flashlight implements LightSource {
     private LightState state;
 
     @Override
-    public void turnOn() {
+    public void turnOn() throws CustomCheckedException {
+        if (state == LightState.ON) {
+            throw new CustomCheckedException("Фонарик уже включен");
+        }
         this.state = LightState.ON;
     }
 
     @Override
     public void turnOff() {
+        if (state == LightState.OFF) {
+            throw new CustomUncheckedException("Фонарик уже выключен");
+        }
         this.state = LightState.OFF;
     }
 
