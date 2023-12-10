@@ -1,0 +1,121 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{paperwidth=1058px,paperheight=595px, left=50px}
+
+\begin{document}	
+	\begin{frame}
+		\vspace{-190px}
+		\hspace*{-45px}\includegraphics[width=0.2\linewidth]{1}
+		\begin{tikzpicture}[overlay, remember picture]
+			\node[anchor=north east, yshift=-5mm, xshift=-5mm, font=\fontsize{30}{9}\bfseries, align=right] at (current page.north east) {\textcolor{blue}{А}\textcolor{gray}{лфавит и его подмножества}};
+		\end{tikzpicture}
+		\begin{flushleft}\fontsize{30}{9}
+			\definecolor{darkgreen}{RGB}{0,153,76}
+			\textcolor{darkgreen}{\(\text{Алфавит }\)}\text{\(\text{- конечное множество различных знаков (букв), символов, для которых}\)}\\
+			\text{\(\text{определена операция конкатенации (присоединения символа к символу или}\)}\\
+			\text{\(\text{цепочке символов).}\)}\\
+			\textcolor{darkgreen}{\(\text{Знак (буква)}\)} \text{\(\text{- любой элемент алфавита (элемент \(x\) алфавита \(X\), где \(x \in X\)).}\)}\\
+			\textcolor{darkgreen}{\(\text{Слово}\)} \text{\(\text{- конечная последовательность знаков (букв) алфавита.}\)}\\
+			\textcolor{darkgreen}{\(\text{Словарь (словарный запас)}\)} \text{\(\text{- множество различных слов над алфавитом.}\)}
+		\end{flushleft}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\vspace{-56px}
+		\hspace*{-45px}\includegraphics[width=0.2\linewidth]{1}
+		\begin{tikzpicture}[overlay, remember picture]
+			\node[anchor=north east, yshift=-5mm, xshift=-5mm, font=\fontsize{30}{9}\bfseries, align=right] at (current page.north east) {\textcolor{blue}{К}\textcolor{gray}{одирование данных}};
+		\end{tikzpicture}
+		\begin{flushleft}\fontsize{22}{9}
+			\definecolor{darkgreen}{RGB}{0,153,0}
+			\textcolor{darkgreen}{\(\text{Кодирование (модуляция) данных}\)} \text{\(\text{- процесс преобразования символов алфавита Х в символы алфавита Y.}\)}\vspace{25pt}\\
+			\textcolor{darkgreen}{\(\text{Декодирование (демодуляция)}\)} \text{\(\text{- процесс, обратный кодированию.}\)}\vspace{25pt}\\
+			\textcolor{darkgreen}{\(\text{Символ}\)} \text{\(\text{- наименьшая единица данных, рассматриваемая как единое целое при кодировании/декодировании.}\)}\vspace{25pt}\\
+			\textcolor{darkgreen}{\(\text{Кодовое слово}\)} \text{\(\text{- последовательность символов из алфавита Y, однозначно обозначающая конкретный символ}\)}\\
+			\text{\(\text{алфавита Х.}\)}\vspace{25pt}\\
+			\textcolor{darkgreen}{\(\text{Средняя длина кодового слова}\)} \text{\(\text{- это величина, которая вычисляется как взвешенная вероятностями сумма}\)}\\
+			\text{\(\text{длин всех кодовых слов.}\)}\\
+			\hspace*{220px}\fontsize{30}{9}$L=\displaystyle\sum_{i=1}^N p_i*l_i$\vspace{13px}\\\fontsize{22}{9}
+			\(\text{Если все кодовые слова имеют одинаковую длину, то код называется \textcolor{darkgreen}{равномерным} (фиксированной длины).}\)
+			\(\text{Если встречаются слова разной длины, то – \textcolor{darkgreen}{неравномерным} (переменной длины).}\)
+		\end{flushleft}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\vspace{-15px}
+		\hspace*{-45px}\includegraphics[width=0.2\linewidth]{1}\vspace{25pt}\\
+		\begin{tikzpicture}[overlay, remember picture]
+			\node[anchor=north east, yshift=-5mm, xshift=-5mm, font=\fontsize{30}{9}\bfseries, align=right] at (current page.north east) {\textcolor{blue}{С}\textcolor{gray}{жатие данных}};
+		\end{tikzpicture}
+		\begin{flushleft}\fontsize{30}{9}
+			\definecolor{darkgreen}{RGB}{0,153,0}
+			\textcolor{darkgreen}{\(\text{Сжатие данных}\)} \(\text{— процесс, обеспечивающий уменьшение объёма данных путём}\)\vspace{25pt}\\
+			\(\text{сокращения их избыточности.}\)\\
+			\textcolor{darkgreen}{\(\text{Сжатие данных}\)} \(\text{— частный случай кодирования данных.}\)\vspace{25pt}\\
+			\textcolor{darkgreen}{\(\text{Коэффициент сжатия}\)} — \(\text{отношение размера входного потока к выходному потоку.}\)\vspace{25pt}\\
+			\textcolor{darkgreen}{\(\text{Отношение сжатия}\)} — \(\text{отношение размера выходного потока ко входному потоку.}\)\vspace{25pt}\\
+			\textbf{Пример}. \(\text{Размер входного потока равен 500 бит, выходного равен 400 бит.}\)\vspace{25pt}\\
+			\(\text{Коэффициент сжатия = 500 бит / 400 бит = 1,25.}\)\\
+			\(\text{Отношение сжатия = 400 бит / 500 бит = 0,8.}\)\vspace{25pt}\\
+			\(\text{Случайные данные невозможно сжать, так как в них нет никакой избыточности.}\)\\
+		\end{flushleft}
+	\end{frame}
+	\begin{frame}
+		\vspace{-90px}
+		\hspace*{-45px}\includegraphics[width=0.2\linewidth]{1}\vspace{15pt}\\
+		\begin{tikzpicture}[overlay, remember picture]
+			\node[anchor=north east, yshift=-5mm, xshift=-5mm, font=\fontsize{30}{9}\bfseries, align=right] at (current page.north east) {\textcolor{blue}{Т}\textcolor{gray}{ипы и методы сжатия данных}};
+		\end{tikzpicture}
+		\begin{flushleft}\fontsize{30}{9}
+			\definecolor{darkgreen}{RGB}{0,153,0}
+			\textcolor{darkgreen}{\(\text{Сжатие без потерь}\)} \(\text{(полностью обратимое) — сжатые данные после декодирования}\)\\
+			\(\text{(распаковки) не отличаются от исходных.}\)\\
+			\textcolor{darkgreen}{\(\text{Сжатие с потерями}\)} \(\text{(частично обратимое) — сжатые данные после декодирования}\)\\
+			\(\text{(распаковки) отличаются от исходных, так как при сжатии часть исходных данных}\)
+			\(\text{была отброшена для увеличения коэффициента cжатия.}\)\vspace{25pt}\\
+			\textcolor{darkgreen}{\(\text{Статистические методы}\)}\(\text{ — кодирование с помощью усреднения вероятности}\)\\
+			\(\text{появления элементов в закодированной последовательности.}\)\vspace{25pt}\\
+			\textcolor{darkgreen}{\(\text{Словарные методы}\)}\(\text{ — использование статистической модели данных для разбиения}\)\\
+			\(\text{данных на слова с последующей заменой на их индексы в словаре.}\)
+		\end{flushleft}
+	\end{frame}
+	\begin{frame}
+		\vspace{-40px}
+		\hspace*{-45px}\includegraphics[width=0.2\linewidth]{1}\vspace{15pt}\\
+		\begin{tikzpicture}[overlay, remember picture]
+			\node[anchor=north east, yshift=-5mm, xshift=-5mm, font=\fontsize{30}{9}\bfseries, align=right] at (current page.north east) {\textcolor{blue}{О}\textcolor{gray}{шибки при передаче и хранении данных}};
+		\end{tikzpicture}
+		\begin{flushleft}\fontsize{26}{9}
+			\(\text{Причины:}\)
+			\begin{itemize}[label={{\scalebox{0.5}{$\bullet$}}}]
+				\item \(\text{Альфа-частицы от примесей в чипе микросхемы.}\)
+				\item \(\text{Нейтроны из фонового космического излучения.}\)
+			\end{itemize}\vspace{30pt}
+			
+			\(\text{Частота единичных битовых ошибок (на 1 GB):}\)
+			
+			\begin{itemize}[label={{\scalebox{0.5}{$\bullet$}}}]
+				\item \(\text{От 1 раза в час до 1 раза в тысячелетие (по данным исследования Google получилось ~1}\)\\
+				\(\text{раз в сутки).}\)
+			\end{itemize}\vspace{30pt}
+			
+			\(\text{Способы обработки данных:}\)
+			
+			\begin{itemize}[label={{\scalebox{0.5}{$\bullet$}}}]
+				\item \(\text{Использовать полученные данные без проверки на ошибки.}\)
+				\item \(\text{Обнаружить ошибку, выполнить запрос повторной передачи поврежденного блока.}\)
+				\item \(\text{Обнаружить ошибку и отбросить поврежденный блок.}\)
+				\item \(\text{Обнаружить и исправить ошибку.}\)
+				\item \(\text{Тройная модульная избыточность.}\)
+			\end{itemize}
+		\end{flushleft}
+	\end{frame}
+	
+\end{document}
