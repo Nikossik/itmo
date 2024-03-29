@@ -6,12 +6,10 @@ import ru.itmo.lab5.manager.Console;
 import ru.itmo.lab5.manager.DumpManager;
 
 public class Main {
-    private static void setSignalProcessing(String messageString, String... signalNames) {
+    private static void setSignalProcessing(String... signalNames) {
         for (String signalName : signalNames) {
             try {
-                Signal.handle(new Signal(signalName), signal -> {
-                    System.out.print(messageString);
-                });
+                Signal.handle(new Signal(signalName), signal -> System.out.print("\nДля получения справки введите 'help', для завершения программы введите 'exit'\n"));
             } catch (IllegalArgumentException ignored) {
                 // Игнорируем исключение, если сигнал с таким названием уже существует или такого сигнала не существует
             }
@@ -34,7 +32,7 @@ public class Main {
         Console console = new Console(commandInvoker);
 
         console.start();
-        setSignalProcessing('\n' + "Для получения справки введите 'help', для завершения программы введите 'exit'" + '\n' ,
+        setSignalProcessing(
                 "INT", "TERM", "TSTP", "BREAK", "EOF");
     }
 }

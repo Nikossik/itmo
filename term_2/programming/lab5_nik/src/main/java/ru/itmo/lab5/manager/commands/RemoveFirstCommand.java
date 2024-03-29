@@ -23,7 +23,7 @@ public class RemoveFirstCommand extends Command {
         if (ticketCollection.getTickets().isEmpty()) {
             System.out.println("Коллекция уже пуста.");
         } else {
-            ticketCollection.getTickets().removeFirst();
+            ticketCollection.getTickets().remove(0);
             System.out.println("Первый элемент коллекции успешно удален.");
         }
     }
