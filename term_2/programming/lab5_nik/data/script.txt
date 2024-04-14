@@ -1,4 +1,0 @@
-remove_first
-help
-show
-execute_script data/script.txt
